@@ -1,11 +1,33 @@
 package com.example.devprofile
 
+import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View.inflate
+import android.widget.ImageView
+import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory
+
+
 
 class MainActivity : AppCompatActivity() {
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
+
+        val bitmap = BitmapFactory.decodeResource(resources, R.drawable.devslopesprofilelogo)
+        val rounded = RoundedBitmapDrawableFactory.create(resources, bitmap)
+        rounded.cornerRadius = 25f
+        val logo = findViewById<ImageView>(R.id.logo)
+        logo.setImageDrawable(rounded)
+        //findViewById<ImageView>(R.id.logo).setImageDrawable(rounded)
     }
+}
+
+class ActivityMainBinding {
+
 }
